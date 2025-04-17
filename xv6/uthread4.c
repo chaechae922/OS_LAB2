@@ -49,7 +49,7 @@ thread_schedule(void)
     nxt = prev;
 
   if (!nxt) {
-    // No work left
+    printf(2, "thread_schedule: no runnable threads\n");
     exit();
   }
 
@@ -150,7 +150,7 @@ mythread(void)
   for (int i = 0; i < 5; i++) {
     thread_join(tids[i]);
   }
-  printf(1, "my thread: exit\n");
+  printf(1, "My thread: exit\n");
   current_thread->state = FREE;
   thread_schedule();
 }

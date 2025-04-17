@@ -154,7 +154,7 @@ static void mythread(void) {
     thread_create(child_thread);
   }
   thread_join_all();
-  printf(1, "my thread: exit\n");
+  printf(1, "My thread: exit\n");
   current_thread->state = FREE;
   thread_schedule();
 }
