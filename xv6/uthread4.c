@@ -162,5 +162,4 @@ main(int argc, char *argv[])
   int tid = thread_create(mythread);
   thread_join(tid);
   exit();
-  return 0;
 }

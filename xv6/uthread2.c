@@ -164,5 +164,4 @@ int main(int argc, char *argv[]) {
   thread_create(mythread);
   thread_join_all();
   exit();
-  return 0;
 }
