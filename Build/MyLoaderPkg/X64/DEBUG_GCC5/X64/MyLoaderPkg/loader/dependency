@@ -1,0 +1,15 @@
+
+
+-include /home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MyLoaderPkg/loader/OUTPUT/file_loader.obj.deps
+
+-include /home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MyLoaderPkg/loader/OUTPUT/relocate.obj.deps
+
+-include /home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MyLoaderPkg/loader/OUTPUT/AutoGen.obj.deps
+
+-include /home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MyLoaderPkg/loader/OUTPUT/loader.obj.deps
+
+-include /home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MyLoaderPkg/loader/OUTPUT/memory_map.obj.deps
+
+-include /home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MyLoaderPkg/loader/OUTPUT/graphic.obj.deps
+
+               

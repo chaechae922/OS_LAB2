@@ -89,3 +89,15 @@ sys_uptime(void)
   release(&tickslock);
   return xticks;
 }
+
+int
+sys_uthread_init(void)
+{
+int ptr;
+if (argint(0, &ptr) < 0)
+  return -1;
+
+myproc()->scheduler = (void (*)(void)) ptr;
+
+return 0;
+}

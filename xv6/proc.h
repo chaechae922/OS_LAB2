@@ -46,9 +46,12 @@ struct proc {
   struct context *context;     // swtch() here to run process
   void *chan;                  // If non-zero, sleeping on chan
   int killed;                  // If non-zero, have been killed
+  int using_uthread;
   struct file *ofile[NOFILE];  // Open files
   struct inode *cwd;           // Current directory
   char name[16];               // Process name (debugging)
+  void (*scheduler)(void);
+  int using_threads;
 };
 
 // Process memory is laid out contiguously, low addresses first:

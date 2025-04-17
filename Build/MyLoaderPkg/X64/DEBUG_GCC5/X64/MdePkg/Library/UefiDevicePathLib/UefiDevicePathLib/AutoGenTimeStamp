@@ -1,0 +1,8 @@
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.h
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.inf
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/DevicePathUtilities.c
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib/DEBUG/AutoGen.h
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/UefiDevicePathLib.c
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/DevicePathUtilitiesDxeSmm.c
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/DevicePathToText.c
+/home/cele922/OS_pj1/edk2/MdePkg/Library/UefiDevicePathLib/DevicePathFromText.c

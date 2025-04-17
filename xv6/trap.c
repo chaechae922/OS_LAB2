@@ -7,7 +7,6 @@
 #include "x86.h"
 #include "traps.h"
 #include "spinlock.h"
-#include "i8254.h"
 
 // Interrupt descriptor table (shared by all CPUs).
 struct gatedesc idt[256];
@@ -55,8 +54,14 @@ trap(struct trapframe *tf)
       wakeup(&ticks);
       release(&tickslock);
     }
-    lapiceoi();
-    break;
+    if(myproc() && myproc()->state == RUNNING &&
+     tf->trapno == T_IRQ0+IRQ_TIMER) {
+    if(!myproc()->using_threads) {
+       yield();
+    }
+  }
+   lapiceoi();
+  break;
   case T_IRQ0 + IRQ_IDE:
     ideintr();
     lapiceoi();
@@ -72,10 +77,7 @@ trap(struct trapframe *tf)
     uartintr();
     lapiceoi();
     break;
-  case T_IRQ0 + 0xB:
-    i8254_intr();
-    lapiceoi();
-    break;
+  case T_IRQ0 + 7:
   case T_IRQ0 + IRQ_SPURIOUS:
     cprintf("cpu%d: spurious interrupt at %x:%x\n",
             cpuid(), tf->cs, tf->eip);

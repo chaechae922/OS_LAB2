@@ -131,6 +131,8 @@ userinit(void)
   p = allocproc();
   
   initproc = p;
+  p->using_uthread = 1;
+
   if((p->pgdir = setupkvm()) == 0){
     panic("userinit: out of memory?");
   }

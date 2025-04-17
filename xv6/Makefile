@@ -153,6 +153,18 @@ vectors.S: vectors.pl
 
 ULIB = ulib.o usys.o printf.o umalloc.o
 
+ulib.o: ulib.c ulib.h
+	$(CC) -fno-pic -static -fno-builtin -fno-strict-aliasing -fvar-tracking -fvar-tracking-assignments -O0 -g -Wall -MD -gdwarf-2 -m32 -Werror -fno-omit-frame-pointer -fno-stack-protector -nostdinc -I. -c -o ulib.o ulib.c
+
+usys.o: usys.S
+	$(CC) -m32 -gdwarf-2 -Wa,-divide -c -o usys.o usys.S
+
+printf.o: printf.c
+	$(CC) -fno-pic -static -fno-builtin -fno-strict-aliasing -fvar-tracking -fvar-tracking-assignments -O0 -g -Wall -MD -gdwarf-2 -m32 -Werror -fno-omit-frame-pointer -fno-stack-protector -nostdinc -I. -c -o printf.o printf.c
+
+umalloc.o: umalloc.c
+	$(CC) -fno-pic -static -fno-builtin -fno-strict-aliasing -fvar-tracking -fvar-tracking-assignments -O0 -g -Wall -MD -gdwarf-2 -m32 -Werror -fno-omit-frame-pointer -fno-stack-protector -nostdinc -I. -c -o umalloc.o umalloc.c
+
 _%: %.o $(ULIB)
 	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o $@ $^
 	$(OBJDUMP) -S $@ > $*.asm
@@ -174,6 +186,10 @@ mkfs: mkfs.c fs.h
 .PRECIOUS: %.o
 
 UPROGS=\
+        _uthread1\
+        _uthread2\
+        _uthread3\
+        _uthread4\
 	_cat\
 	_echo\
 	_forktest\
@@ -189,6 +205,7 @@ UPROGS=\
 	_usertests\
 	_wc\
 	_zombie\
+        _hello2\
 
 fs.img: mkfs README $(UPROGS)
 	./mkfs fs.img README $(UPROGS)
@@ -228,9 +245,6 @@ ifndef CPUS
 CPUS := 2
 endif
 QEMUOPTS = -drive file=fs.img,index=1,media=disk,format=raw -drive file=xv6.img,index=0,media=disk,format=raw -smp $(CPUS) -m 512 $(QEMUEXTRA)
-
-qemu: fs.img xv6.img
-	$(QEMU) -serial mon:stdio $(QEMUOPTS)
 
 qemu-memfs: xv6memfs.img
 	$(QEMU) -drive file=xv6memfs.img,index=0,media=disk,format=raw -smp $(CPUS) -m 256
@@ -292,3 +306,25 @@ tar:
 	(cd /tmp; tar cf - xv6) | gzip >xv6-rev10.tar.gz  # the next one will be 10 (9/17)
 
 .PHONY: dist-test dist
+
+_uthread1: uthread1.o uthread_switch.o $(ULIB)
+	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o _uthread1 uthread1.o uthread_switch.o $(ULIB)
+	$(OBJDUMP) -S _uthread1 > uthread1.asm
+
+_uthread2: uthread2.o uthread_switch.o $(ULIB)
+	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o _uthread2 uthread2.o uthread_switch.o $(ULIB)
+	$(OBJDUMP) -S _uthread2 > uthread2.asm
+
+_uthread3: uthread3.o uthread_switch.o $(ULIB)
+	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o _uthread3 uthread3.o uthread_switch.o $(ULIB)
+	$(OBJDUMP) -S _uthread3 > uthread3.asm
+
+_uthread4: uthread4.o uthread_switch.o $(ULIB)
+	$(LD) $(LDFLAGS) -N -e main -Ttext 0 -o _uthread4 uthread4.o uthread_switch.o $(ULIB)
+	$(OBJDUMP) -S _uthread4 > uthread4.asm
+
+qemu: fs.img xv6.img
+	$(QEMU) -bios /usr/share/seabios/bios.bin -serial mon:stdio \
+	    -drive file=xv6.img,if=ide,media=disk,format=raw,index=0 \
+	    -drive file=fs.img,if=ide,media=disk,format=raw,index=1 \
+	    -smp 1 -m 512

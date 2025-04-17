@@ -1,0 +1,17 @@
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/SetMem.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/ScanMem64Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/ScanMem32Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/ScanMem16Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/ScanMem8Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/ZeroMemWrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/CompareMemWrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/SetMemNWrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/SetMem64Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/SetMem32Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/SetMem16Wrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/SetMemWrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/CopyMemWrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/IsZeroBufferWrapper.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/MemLibGeneric.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/MemLibGuid.obj
+/home/cele922/OS_pj1/Build/MyLoaderPkg/X64/DEBUG_GCC5/X64/MdePkg/Library/BaseMemoryLib/BaseMemoryLib/OUTPUT/CopyMem.obj
